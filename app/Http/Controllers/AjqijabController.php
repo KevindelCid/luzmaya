@@ -17,7 +17,15 @@ class AjqijabController extends Controller
 
 //    $datos['users']=ajqij::paginate(5);
 $datos = 
-DB::select("select  * from users where tipo = 2");
+DB::select("SELECT users.id as id, users.foto as foto,
+users.descripcion_user as descripcion_user, users.name, COUNT(*) AS num FROM 
+agendas join users 
+ON agendas.id_usuario = users.id 
+WHERE
+fecha >= '2021-10-10' 
+AND tipo = 2 
+GROUP BY users.name, users.id, users.foto, users.descripcion_user
+ORDER BY COUNT(*) DESC");
 
  
 
