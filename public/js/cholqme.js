@@ -4,8 +4,8 @@ var lunas;
 
 const tipoNawalC = [
 
-"Nawal de los animales cuadrúpedos","Nawal de los caminos y dirigentes","Nawal de la inteligencia","Nawal del aire y la luna",
-"Nawal de los animales cuadrúpedos"
+    "Nawal de los animales cuadrúpedos", "Nawal de los caminos y dirigentes", "Nawal de la inteligencia", "Nawal del aire y la luna",
+    "Nawal de los animales cuadrúpedos"
 
 
 ];
@@ -44,7 +44,7 @@ const diass = ["11", "12", "13",
     "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
     "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
-function calcularCargador(f2){
+function calcularCargador(f2) {
 
 
 
@@ -65,10 +65,10 @@ function calcularCargador(f2){
 
 
 
-  
+
     let cargadores = [
 
-        "KEEJ", "E", "NOJ", "IQ","KEEJ"
+        "KEEJ", "E", "NOJ", "IQ", "KEEJ"
     ];
     var pivot = -1;
     var npivot = 0;
@@ -78,27 +78,27 @@ function calcularCargador(f2){
         if (pivot == 4) {
             pivot = 0;
         }
-        if(npivot == 14){
-npivot =1;
+        if (npivot == 14) {
+            npivot = 1;
 
 
         }
         if (i == anios) {
-npivot =npivot - 2; //aqui estoy obteniendo un erroe en la fecha 21/05/1998 me da de resultado -1 keej investigar la razon
-     
-if(npivot == 0){
-npivot = 13;
+            npivot = npivot - 2; //aqui estoy obteniendo un erroe en la fecha 21/05/1998 me da de resultado -1 keej investigar la razon
 
-}else if(npivot == -1){ npivot = 12}
+            if (npivot == 0) {
+                npivot = 13;
+
+            } else if (npivot == -1) { npivot = 12 }
             let nAEI = document.querySelector("#nawalcargador")
-            nAEI.innerHTML = npivot+" "+ cargadores[pivot+1];
-            document.getElementById("imgcargador").src = baseURL + "/storage/naw/" +  cargadores[pivot+1] + ".png";
+            nAEI.innerHTML = npivot + " " + cargadores[pivot + 1];
+            document.getElementById("imgcargador").src = baseURL + "/storage/naw/" + cargadores[pivot + 1] + ".png";
             let imgAEI = document.querySelector("#imgcargador")
             imgAEI.removeAttribute("hidden");
-            document.getElementById("mimgncargador").src = baseURL + "/storage/" +  cargadores[pivot+1] + ".png";
+            document.getElementById("mimgncargador").src = baseURL + "/storage/" + cargadores[pivot + 1] + ".png";
 
             let tipocargador = document.querySelector("#tipocargador")
-            tipocargador.innerHTML = tipoNawalC[pivot+1];
+            tipocargador.innerHTML = tipoNawalC[pivot + 1];
 
 
 
@@ -119,18 +119,21 @@ npivot = 13;
 
 
 // Función para calcular los días transcurridos entre dos fechas
-restaFechaHoy = function(f2){
-    
+restaFechaHoy = function (f2) {
+
+
+
+
     var aFecha1 = "07/01/1001".split('/');
     var aFecha2 = f2.split('/');
-    var nfecha = aFecha2[1]+"/"+aFecha2[0]+"/"+aFecha2[2] ;
+    var nfecha = aFecha2[1] + "/" + aFecha2[0] + "/" + aFecha2[2];
     var anfecha = nfecha.split('/');
 
     var fFecha1 = Date.UTC(aFecha1[2], aFecha1[1] - 1, aFecha1[0]);
     var fFecha2 = Date.UTC(anfecha[2], anfecha[1] - 1, anfecha[0]);
     var dif = fFecha2 - fFecha1;
     var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
-  
+
     calcularCargador(nfecha);
 
 
@@ -150,7 +153,7 @@ restaFechas = function (f2) {
     var fFecha2 = Date.UTC(aFecha2[2], aFecha2[1] - 1, aFecha2[0]);
     var dif = fFecha2 - fFecha1;
     var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
- 
+
     calcularCargador(f2);
 
 
@@ -165,17 +168,41 @@ restaFechas = function (f2) {
 function calcularNawal() {
 
 
-    
+
 
 
 
 
     let fecha = document.getElementById("nawalDate").value;
+
+    let err = document.querySelector("#err")
+    err.innerHTML = "";
+if(fecha == ""){
+
+    err.innerHTML = "Debe seleccionar una fecha primero";
+    return 0;
+
+
+}else
+    if (fecha < "1001-07-01") {
+
+      
+        err.innerHTML = "La fecha que seleccionó se encuentra fuera del rango permitido min: 01/07/1001";
+        return 0;
+
+    }
+   else if(fecha > "9999-12-31"){
+
+    err.innerHTML = "La fecha que seleccionó se encuentra fuera del rango permitido max: 31/12/9999";
+    return 0;
+
+   }
+
     var fe = fecha.split("-");
     let nfe = fe[2] + "/" + fe[1] + "/" + fe[0];
     calcularCargador(nfe);
     diaCholqij(restaFechas(nfe));
-   calcularAniosSolares(restarSolar(nfe));
+    calcularAniosSolares(restarSolar(nfe));
 
 
 
@@ -276,12 +303,12 @@ function calcularNawal() {
         weekdays: 'Domingo_Lunes_Martes_Miercoles_Jueves_Viernes_Sábado'.split('_'),
         weekdaysShort: 'Dom._Lun._Mar._Mier._Jue._Vier._Sab.'.split('_'),
         weekdaysMin: 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_')
-      }
-      );
+    }
+    );
     moment.locale('es');
 
-    let woy =  moment(fecha).format("dddd DD [de] MMMM [de] YYYY");
-  
+    let woy = moment(fecha).format("dddd DD [de] MMMM [de] YYYY");
+
     let fecho = document.querySelector("#fecho")
     fecho.innerHTML = woy;
 
@@ -320,13 +347,13 @@ function calcularNawalHoy() {
         weekdays: 'Domingo_Lunes_Martes_Miercoles_Jueves_Viernes_Sábado'.split('_'),
         weekdaysShort: 'Dom._Lun._Mar._Mier._Jue._Vier._Sab.'.split('_'),
         weekdaysMin: 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_')
-      }
-      );
+    }
+    );
     moment.locale('es');
 
     const tiempoTranscurrido = Date.now();
     const hoy = new Date(tiempoTranscurrido);
-     let woy =  moment(hoy).format("dddd DD [de] MMMM [de] YYYY");
+    let woy = moment(hoy).format("dddd DD [de] MMMM [de] YYYY");
 
     diaCholqij(restaFechaHoy(hoy.toLocaleDateString('en-US', { timeZone: 'America/Guatemala' })));
     calcularAniosSolares(restarSolar(hoy.toLocaleDateString('en-US', { timeZone: 'America/Guatemala' })));
@@ -431,7 +458,7 @@ function diaCholqij(dias) {
 
     let n = Math.floor(dias / 260);
     let nn = dias + 1 - n * 260;
- 
+
     detNawal(nn);
 
 }
@@ -448,24 +475,24 @@ function lunaciones(posDia, posNawal) {
 
     const tipoNawal = [
 
-        "Nawal de las Artes","Nawal de los caminos y dirigentes","Nawal de la casa y de los niños","Nawal de la naturaleza","Nawal del bienestar económico",
-        "Nawal de todas las faltas","Nawal de la inteligencia","Nawal de la muerte repentina","Nawal de toda clase de pleitos","Nawal de sol",
-        "Nawal del mar","Nawal del aire y la luna","Nawal de la claridad","Nawal de las cárceles visibles e invisibles","Nawal de la creación del hombre y la mujer",
-        "Nawal de toda clase de muertes", "Nawal de los animales cuadrúpedos","Nawal de toda clase de semillas","Nawal de los cuatro señores del fuego","Nawal de la justicia",
+        "Nawal de las Artes", "Nawal de los caminos y dirigentes", "Nawal de la casa y de los niños", "Nawal de la naturaleza", "Nawal del bienestar económico",
+        "Nawal de todas las faltas", "Nawal de la inteligencia", "Nawal de la muerte repentina", "Nawal de toda clase de pleitos", "Nawal de sol",
+        "Nawal del mar", "Nawal del aire y la luna", "Nawal de la claridad", "Nawal de las cárceles visibles e invisibles", "Nawal de la creación del hombre y la mujer",
+        "Nawal de toda clase de muertes", "Nawal de los animales cuadrúpedos", "Nawal de toda clase de semillas", "Nawal de los cuatro señores del fuego", "Nawal de la justicia",
 
-        "Nawal de las Artes","Nawal de los caminos y dirigentes","Nawal de la casa y de los niños","Nawal de la naturaleza","Nawal del bienestar económico",
-        "Nawal de todas las faltas","Nawal de la inteligencia","Nawal de la muerte repentina","Nawal de toda clase de pleitos","Nawal de sol",
-        "Nawal del mar","Nawal del aire y la luna","Nawal de la claridad","Nawal de las cárceles visibles e invisibles","Nawal de la creación del hombre y la mujer",
-        "Nawal de toda clase de muertes", "Nawal de los animales cuadrúpedos","Nawal de toda clase de semillas","Nawal de los cuatro señores del fuego","Nawal de la justicia",
+        "Nawal de las Artes", "Nawal de los caminos y dirigentes", "Nawal de la casa y de los niños", "Nawal de la naturaleza", "Nawal del bienestar económico",
+        "Nawal de todas las faltas", "Nawal de la inteligencia", "Nawal de la muerte repentina", "Nawal de toda clase de pleitos", "Nawal de sol",
+        "Nawal del mar", "Nawal del aire y la luna", "Nawal de la claridad", "Nawal de las cárceles visibles e invisibles", "Nawal de la creación del hombre y la mujer",
+        "Nawal de toda clase de muertes", "Nawal de los animales cuadrúpedos", "Nawal de toda clase de semillas", "Nawal de los cuatro señores del fuego", "Nawal de la justicia",
 
-        "Nawal de las Artes","Nawal de los caminos y dirigentes","Nawal de la casa y de los niños","Nawal de la naturaleza","Nawal del bienestar económico",
-        "Nawal de todas las faltas","Nawal de la inteligencia","Nawal de la muerte repentina","Nawal de toda clase de pleitos","Nawal de sol",
-        "Nawal del mar","Nawal del aire y la luna","Nawal de la claridad","Nawal de las cárceles visibles e invisibles","Nawal de la creación del hombre y la mujer",
-        "Nawal de toda clase de muertes", "Nawal de los animales cuadrúpedos","Nawal de toda clase de semillas","Nawal de los cuatro señores del fuego","Nawal de la justicia"
-        
-        
-        
-        ];
+        "Nawal de las Artes", "Nawal de los caminos y dirigentes", "Nawal de la casa y de los niños", "Nawal de la naturaleza", "Nawal del bienestar económico",
+        "Nawal de todas las faltas", "Nawal de la inteligencia", "Nawal de la muerte repentina", "Nawal de toda clase de pleitos", "Nawal de sol",
+        "Nawal del mar", "Nawal del aire y la luna", "Nawal de la claridad", "Nawal de las cárceles visibles e invisibles", "Nawal de la creación del hombre y la mujer",
+        "Nawal de toda clase de muertes", "Nawal de los animales cuadrúpedos", "Nawal de toda clase de semillas", "Nawal de los cuatro señores del fuego", "Nawal de la justicia"
+
+
+
+    ];
     //me aseguro que nunca se salga del rango creando este array que permitirá recorrer los nawales
     // de las lunaciones sin salir del rango de la constante global nawales[]
     const nawalesp = [
@@ -514,13 +541,13 @@ function lunaciones(posDia, posNawal) {
     let tipoengei = document.querySelector("#tipoai")
     tipoengei.innerHTML = tipoNawal[posNawal + 20 + 6];
 
-    
+
     let tipoen = document.querySelector("#tipoe")
-    tipoen.innerHTML = tipoNawal[posNawal + 20 -8];
+    tipoen.innerHTML = tipoNawal[posNawal + 20 - 8];
 
-    
+
     let tipoed = document.querySelector("#tipoed")
-    tipoed.innerHTML = tipoNawal[posNawal + 20 -2];
+    tipoed.innerHTML = tipoNawal[posNawal + 20 - 2];
 
 
 
@@ -528,15 +555,15 @@ function lunaciones(posDia, posNawal) {
 
 
 
-    
+
     let tipoi = document.querySelector("#tipoi")
     tipoi.innerHTML = tipoNawal[posNawal + 20 - 6];
 
-    
+
     let tipofecha = document.querySelector("#tipofecha")
     tipofecha.innerHTML = tipoNawal[posNawal + 20];
 
-    
+
     let tipod = document.querySelector("#tipod")
     tipod.innerHTML = tipoNawal[posNawal + 20 + 6];
 
@@ -549,7 +576,7 @@ function lunaciones(posDia, posNawal) {
     let tipoid = document.querySelector("#tipoid")
     tipoid.innerHTML = tipoNawal[posNawal + 20 + 2];
 
-    
+
     let tipond = document.querySelector("#tipond")
     tipond.innerHTML = tipoNawal[posNawal + 20 - 12];
 

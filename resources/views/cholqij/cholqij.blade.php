@@ -11,8 +11,8 @@
                 <div class="row">
                  
                     <div class="col-md-3 form-group">
-                       
-                        <input type="date" class="form-control" name="nawalDate" id="nawalDate">
+                       <strong><small style="color: crimson;" id="err" name="err" ></small></strong>
+                        <input type="date" min="1001-07-01" max="9999-12-31" class="form-control" name="nawalDate" id="nawalDate">
                     </div>
                     <div class="col-md-4 form-group">
                        

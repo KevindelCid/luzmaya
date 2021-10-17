@@ -61,10 +61,10 @@ Elige la fecha en la que esperas hacer una cita
 </div>
 
  @endforeach
+ 
 </div>
-<div class="centrar">
-{{ $ajqijs->links() }}
-</div>
+<div class="contis">{{ $ajqijs->links() }}</div>
+
 
 
 
@@ -72,7 +72,9 @@ Elige la fecha en la que esperas hacer una cita
 
   
     
+<div style="text-align: center;">
 
+</div>
 
 
 

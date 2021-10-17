@@ -55,12 +55,13 @@ var baseURL = {!! json_encode(url('/')) !!}
 </head>
 <body class="fondo opacity">
     <div id="app">
-        <nav class="navbar navbar-expand-md  ">
+      
+        <nav class="navbar navbar-expand-md navbar-light   ">
             <div class="container">
             
                     <img id="" class="nav-logo" src="{{ asset('storage').'/luzmaya.png' }}" width="120" alt="">
               
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -120,15 +121,15 @@ var baseURL = {!! json_encode(url('/')) !!}
                         @guest
                       
                         <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                             </li>
                             
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                                 
-                            @endif
+                            @endif --}}
                         @else
                         
                             <li class="nav-item dropdown">

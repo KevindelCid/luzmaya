@@ -116,4 +116,7 @@ paypal.Button.render({
         });
     }
 
-}, '#paypal-button-container');
+},   
+
+
+'#paypal-button-container');
