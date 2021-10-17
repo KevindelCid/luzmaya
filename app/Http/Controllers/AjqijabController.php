@@ -25,7 +25,7 @@ WHERE
 fecha >= '2021-10-10' 
 AND tipo = 2 
 GROUP BY users.name, users.id, users.foto, users.descripcion_user
-ORDER BY COUNT(*) DESC");
+ORDER BY COUNT(*) DESC"); 
 
  
 
