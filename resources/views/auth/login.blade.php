@@ -1,5 +1,10 @@
+
 @extends('layouts.app')
 @section('content')
+
+
+
+
 <script src="{{ asset('js/l.js') }}" defer></script>
 
 <link href="{{ asset('css/l.css') }}" rel="stylesheet">

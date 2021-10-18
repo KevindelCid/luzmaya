@@ -96,10 +96,14 @@ Route::get('/cholqij/hoy', function () {
 
 });
 
-Route::get('/', function () {
+Route::get('/home', function () {
     
-    return view('auth/login');
+    return view('home');
 });
+
+
+
+// Route::get('admin/cp',[AdminController::class,'index'])->name('cp')->middleware('auth');
 
 
 Route::resource('nawales/ver', 'NawalController'::class);
@@ -128,13 +132,21 @@ Route::get('/nawales/ver', 'NawalController@index')->name('nawales.ver');
 Route::get('/cholqij/hoy', 'CholqinfoController@index')->name('cholqij.hoy');
 
 
+Route::get('/admin/cp', 'AdminController@index')->name('cp')->middleware('auth');
+
+
 Route::post('nawales/crear','NawalController@create')->name('nawales.crear');
 
 Route::get('/ajqijab/perfil/{id}', 'AjqijabController@verperfil');
 
 Route::get('/ajqijab/perfil/srcs/{id}', 'AjqijabController@verperfil2');
 
-Route::get('/ajqijab/solicitud', 'AjqijabController@solis');
+
+
+Route::post('/ajqijab/validate-ajqij', 'AjqijabController@validatea')->name('val')->middleware('auth');
+
+
+Route::get('/ajqijab/solicitud', 'AjqijabController@solis')->name('soli')->middleware('auth','verified');
 
 Route::get('/ajqijab/eres_ajqij', 'AjqijabController@eres')->name('ajqijab.eres')->middleware('auth','verified');
 

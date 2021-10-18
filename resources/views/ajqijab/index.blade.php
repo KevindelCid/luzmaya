@@ -2,8 +2,8 @@
 @section('content')
     <div class="container">
 
-Elige la fecha en la que esperas hacer una cita
- 
+<a href="{{ route('soli') }}">¿Usted es un Ajq'ij?
+</a>
 
 @if (Session::has('mensaje'))
 <div class="alert alert-success alert-dismissible" role="alert">
