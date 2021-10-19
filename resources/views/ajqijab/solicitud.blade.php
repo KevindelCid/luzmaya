@@ -55,6 +55,15 @@
                  <strong>{{ $message }}</strong>
              </span>
          @enderror
+
+         <label for="">Cual es su número de DPI?*</label>
+         <input  required  value="{{ old('dpi') }}"  type="number" class="form-control @error('dpi') is-invalid @enderror" name="dpi"  id="dpi" aria-describedby="helpId" >
+        
+         @error('dpi')
+         <span class="invalid-feedback" role="alert">
+             <strong>{{ $message }}</strong>
+         </span>
+     @enderror
             
              <small id="helpId" class="form-text text-muted">Usarémos esta información unicamente para pode contactar con su persona y confirmar su identidad en caso fuese necesario.</small>
             

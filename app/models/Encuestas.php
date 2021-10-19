@@ -19,7 +19,8 @@ class Encuestas extends Model
         "auto_definicion",
         "biografia_encuesta",
         "telefono",
-        "id_usuario"
+        "id_usuario",
+        "dpi"
        
 
     ];

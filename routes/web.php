@@ -99,7 +99,7 @@ Route::get('/cholqij/hoy', function () {
 Route::get('/home', function () {
     
     return view('home');
-});
+})->name('home');
 
 
 
@@ -133,6 +133,17 @@ Route::get('/cholqij/hoy', 'CholqinfoController@index')->name('cholqij.hoy');
 
 
 Route::get('/admin/cp', 'AdminController@index')->name('cp')->middleware('auth');
+
+
+Route::get('/admin/perfil-solicitante/{id}/{ids}/{ide}', 'AdminController@perfil')->name('ps')->middleware('auth');
+
+
+Route::post('/admin/perfil-solicitante', 'AdminController@acept')->name('acept')->middleware('auth');
+Route::post('/admin/perfil-solicitante/ne', 'AdminController@negation')->name('negation')->middleware('auth');
+
+
+Route::get('/admin/perfil-solicitante/rechazar/{id}', 'AdminController@rechazar')->name('rechazar')->middleware('auth');
+
 
 
 Route::post('nawales/crear','NawalController@create')->name('nawales.crear');

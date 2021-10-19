@@ -36,6 +36,9 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
+
+
+
         date_default_timezone_set('America/Guatemala');
         $fee =  Carbon::now()->format('Y-m-d');
 

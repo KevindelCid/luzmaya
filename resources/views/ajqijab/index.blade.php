@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-
+@if(auth()->user()->tipo == 1)
 <a href="{{ route('soli') }}">¿Usted es un Ajq'ij?
 </a>
+@endif
 
 @if (Session::has('mensaje'))
 <div class="alert alert-success alert-dismissible" role="alert">

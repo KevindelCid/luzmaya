@@ -26,6 +26,7 @@ class AjqijabController extends Controller
     $v = Validator::make($request->all(), [
       'biografia_encuesta' => [ 'required','string','unique:encuestas'],
       'telefono' => ['required', 'string', 'max:12','min:8', 'unique:encuestas'],
+      'dpi' => ['required', 'string', 'max:13','min:13', 'unique:encuestas'],
     
   ]);
 
@@ -44,6 +45,7 @@ class AjqijabController extends Controller
       'biografia_encuesta' => $input['biografia_encuesta'],
       'telefono' => $input['telefono'],
       'id_usuario' => auth()->user()->id,
+      'dpi' => $input['dpi'],
     ]);
 $dato = Encuestas::latest('id_encuesta')->where('id_usuario',auth()->user()->id)->first();
 
@@ -209,7 +211,10 @@ ORDER BY COUNT(*) DESC");
   public function solis()
   {
 
+    if(auth()->user()->tipo == 2){
 
+      return redirect()->route('inicio');
+    }
     $f = 'holis';
     return view('ajqijab/solicitud')->with('coso', $f);
   }

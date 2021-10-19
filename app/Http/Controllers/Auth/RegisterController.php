@@ -177,6 +177,7 @@ else{
             'estado' => 1,
             'tipo' => 1,
             'descripcion_user' => "n/a",
+            'dpi'=> null,
             // 'foto' => "uploads".$data['foto'],
             'foto' => $profile_image_url,
 
