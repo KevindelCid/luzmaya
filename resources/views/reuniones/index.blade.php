@@ -1,31 +1,53 @@
 @extends('layouts.app')
 @section('content')
+
 <script src='https://meet.jit.si/external_api.js'></script>
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600,700,900&display=swap" rel="stylesheet">
 <link href="{{ asset('css/cuenta-regresiva.css') }}" rel="stylesheet">
 
 @if(isset($mensaje))
 <div class="centrar">
-<h3>{{$mensaje}} <a style="color:rgb(77, 0, 177);" href="{{route('bienvenida')}}">ir al inicio</a> </h3>
+<h3>{{$mensaje}} <a style="color:rgb(77, 0, 177);" href="{{route('inicio')}}">ir al inicio</a> </h3>
 
 </div>
 
 @else
+<section>
 <div class="portada" id="portada"> 
-        <div class="header">
+        {{-- <div class="header">
         <h1 class="logotipo">{{$titu}}</h1>
        
-        <p class="mensaje">{{$descri}}</p>
-         <p>La reunión empezará en: </p>
+        <p class="mensaje">{{$descri}}</p> --}}
+        
+<div class="col-md-12">
+    <div class="box">
+{{-- <form action="" class="mb-5" method="" enctype="multipart/form-data"> --}}
+<div class="row mb-5" >
+  <div class="col-md-12 form-group">
+                       
+
+    <div class="form-group">
+        <div class="header">
+            <h1 class="logotipo">{{$titu}}</h1>
+           
+      
+        <div><p>La reunión empezará en: </p></div> 
     </div>
+  </div>
+  <div class="col-md-12 form-group">
+                       
 
-    <div id="cuenta"></div>
-
-    <div class="redes-sociales">
+    <div class="form-group">
+ <div id="cuenta"></div>
+    </div></div>
+</div>
+</div>
+</div>
+    {{-- <div class="redes-sociales">
         <a href="https://www.facebook.com/falconamsters" class="btn-red-social"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.twitter.com/falconamsters" class="btn-red-social"><i class="fab fa-twitter"></i></a>
         <a href="https://www.twitter.com/falconamsters" class="btn-red-social"><i class="fab fa-instagram"></i></a>
-    </div>
+    </div> --}}
 </div>
 <main class="contenedor">
 @if($estado == 1)

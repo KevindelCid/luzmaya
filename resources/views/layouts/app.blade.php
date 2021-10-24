@@ -59,7 +59,7 @@ var baseURL = {!! json_encode(url('/')) !!}
         <nav class="navbar navbar-expand-md navbar-light   ">
             <div class="container">
             
-                    <img id="" class="nav-logo" src="{{ asset('storage').'/luzmaya.png' }}" width="120" alt="">
+                   <a href="{{ route('home') }}"> <img id="" class="nav-logo" src="{{ asset('storage').'/luzmaya.png' }}" width="120" alt=""></a>
               
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -141,6 +141,11 @@ var baseURL = {!! json_encode(url('/')) !!}
                                     
                                     <a class="dropdown-item" href="{{ route('perfil.index') }}">
                                      {{ __('Perfil') }}
+                                 </a>
+                                
+                                    
+                                    <a class="dropdown-item" href="{{ route('inicio') }}">
+                                     {{ __('Eventos proximos') }}
                                  </a>
 
                                     <a class="dropdown-item" href="{{ route('inicio') }}"

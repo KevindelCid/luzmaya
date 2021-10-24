@@ -51,7 +51,7 @@
 @endforeach
 <p>Email de contacto: {{ $users->email }}</p>
 </div>
-{{-- skylarkpaypal@gmail.com --}}
+
 
 <div class="col-md-4 form-group">
 

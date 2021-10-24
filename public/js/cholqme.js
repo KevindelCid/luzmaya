@@ -23,6 +23,22 @@ const nawales = ["BATZ", "E", "AJ", "IX", "TZIKIN", "AJMAQ", "NOJ",
     "TIJAX", "KAWOQ", "AJPU", "IMOX", "IQ", "AQABAL", "KAT", "KAN",
     "KEME", "KEEJ", "QANIL", "TOJ", "TZI"];
 const diass = ["11", "12", "13",
+"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
     "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
     "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
     "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
@@ -47,7 +63,9 @@ const diass = ["11", "12", "13",
 function calcularCargador(f2) {
 
 
-
+    console.log(diass[163]);
+    console.log(diass[263]);
+    console.log(diass[288]);
 
     var fechaCargador = "19/03/1907".split('/');
     var aFecha2 = f2.split('/');
@@ -177,26 +195,26 @@ function calcularNawal() {
 
     let err = document.querySelector("#err")
     err.innerHTML = "";
-if(fecha == ""){
+    if (fecha == "") {
 
-    err.innerHTML = "Debe seleccionar una fecha primero";
-    return 0;
-
-
-}else
-    if (fecha < "1001-07-01") {
-
-      
-        err.innerHTML = "La fecha que seleccionó se encuentra fuera del rango permitido min: 01/07/1001";
+        err.innerHTML = "Debe seleccionar una fecha primero";
         return 0;
 
-    }
-   else if(fecha > "9999-12-31"){
 
-    err.innerHTML = "La fecha que seleccionó se encuentra fuera del rango permitido max: 31/12/9999";
-    return 0;
+    } else
+        if (fecha < "1001-07-01") {
 
-   }
+
+            err.innerHTML = "La fecha que seleccionó se encuentra fuera del rango permitido min: 01/07/1001";
+            return 0;
+
+        }
+        else if (fecha > "9999-12-31") {
+
+            err.innerHTML = "La fecha que seleccionó se encuentra fuera del rango permitido max: 31/12/9999";
+            return 0;
+
+        }
 
     var fe = fecha.split("-");
     let nfe = fe[2] + "/" + fe[1] + "/" + fe[0];
@@ -468,10 +486,20 @@ function detNawal(diasC) {
 
     let naw = Math.floor(diasC / 20);
     let naww = diasC - naw * 20;
+    // prueba de que valor es numero y cual no lo es:
+    alert(parseInt(diasC) - 1);
+
+
+
+    ////
     lunas = lunaciones(diasC - 1, naww - 1);
 }
 
 function lunaciones(posDia, posNawal) {
+
+
+
+
 
     const tipoNawal = [
 
@@ -509,23 +537,26 @@ function lunaciones(posDia, posNawal) {
         "TIJAX", "KAWOQ", "AJPU", "IMOX", "IQ", "AQABAL", "KAT", "KAN",
         "KEME", "KEEJ", "QANIL", "TOJ", "TZI"];
 
-    let total = parseInt(diass[posDia - 8]) + parseInt(diass[posDia - 1]) + parseInt(diass[posDia - 2]) +
-        parseInt(diass[posDia - 6]) + parseInt(diass[posDia + 6]) + parseInt(diass[posDia - 5])
+    let total = parseInt(diass[posDia +13 - 8]) + parseInt(diass[posDia +13 - 1]) + parseInt(diass[posDia +13 - 2]) +
+        parseInt(diass[posDia +13 - 6]) + parseInt(diass[posDia + 6]) + parseInt(diass[posDia +13 - 5])
         + parseInt(diass[posDia + 2]) + parseInt(diass[posDia + 1]) + parseInt(diass[posDia]);
+
+
+
 
     let lunas = [
         //fila engendramiento
-        diass[posDia - 1], nawalesp[posNawal + 20 + 6],
-        diass[posDia - 8], nawalesp[posNawal + 20 - 8],
-        diass[posDia - 2], nawalesp[posNawal + 20 - 2],
+        diass[posDia +13 - 1], nawalesp[posNawal + 20 + 6],
+        diass[posDia +13- 8], nawalesp[posNawal + 20 - 8],
+        diass[posDia +13- 2], nawalesp[posNawal + 20 - 2],
         //fila nawal
-        diass[posDia - 6], nawalesp[posNawal + 20 - 6],
+        diass[posDia +13- 6], nawalesp[posNawal + 20 - 6],
         diass[posDia], nawalesp[posNawal + 20], // 
         diass[posDia + 6], nawalesp[posNawal + 20 + 6],
 
         //fila destino
         diass[posDia + 2], nawalesp[posNawal + 20 + 2],
-        diass[posDia - 5], nawalesp[posNawal + 20 - 12],
+        diass[posDia +13 - 5], nawalesp[posNawal + 20 - 12],
         diass[posDia + 1], nawalesp[posNawal + 20 - 6],
         total
     ];

@@ -23,6 +23,22 @@ const nawales = ["BATZ", "E", "AJ", "IX", "TZIKIN", "AJMAQ", "NOJ",
     "TIJAX", "KAWOQ", "AJPU", "IMOX", "IQ", "AQABAL", "KAT", "KAN",
     "KEME", "KEEJ", "QANIL", "TOJ", "TZI"];
 const diass = ["11", "12", "13",
+"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
     "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
     "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
     "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
@@ -483,23 +499,23 @@ function lunaciones(posDia, posNawal) {
         "TIJAX", "KAWOQ", "AJPU", "IMOX", "IQ", "AQABAL", "KAT", "KAN",
         "KEME", "KEEJ", "QANIL", "TOJ", "TZI"];
 
-    let total = parseInt(diass[posDia - 8]) + parseInt(diass[posDia - 1]) + parseInt(diass[posDia - 2]) +
-        parseInt(diass[posDia - 6]) + parseInt(diass[posDia + 6]) + parseInt(diass[posDia - 5])
+    let total = parseInt(diass[posDia +13 - 8]) + parseInt(diass[posDia +13- 1]) + parseInt(diass[posDia +13 - 2]) +
+        parseInt(diass[posDia +13- 6]) + parseInt(diass[posDia + 6]) + parseInt(diass[posDia +13 - 5])
         + parseInt(diass[posDia + 2]) + parseInt(diass[posDia + 1]) + parseInt(diass[posDia]);
 
     let lunas = [
         //fila engendramiento
-        diass[posDia - 1], nawalesp[posNawal + 20 + 6],
-        diass[posDia - 8], nawalesp[posNawal + 20 - 8],
-        diass[posDia - 2], nawalesp[posNawal + 20 - 2],
+        diass[posDia +13 - 1], nawalesp[posNawal + 20 + 6],
+        diass[posDia +13- 8], nawalesp[posNawal + 20 - 8],
+        diass[posDia +13- 2], nawalesp[posNawal + 20 - 2],
         //fila nawal
-        diass[posDia - 6], nawalesp[posNawal + 20 - 6],
+        diass[posDia +13- 6], nawalesp[posNawal + 20 - 6],
         diass[posDia], nawalesp[posNawal + 20], // 
         diass[posDia + 6], nawalesp[posNawal + 20 + 6],
 
         //fila destino
         diass[posDia + 2], nawalesp[posNawal + 20 + 2],
-        diass[posDia - 5], nawalesp[posNawal + 20 - 12],
+        diass[posDia +13 - 5], nawalesp[posNawal + 20 - 12],
         diass[posDia + 1], nawalesp[posNawal + 20 - 6],
         total
     ];

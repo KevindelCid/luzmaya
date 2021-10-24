@@ -94,9 +94,9 @@ Route::get('/cholqij/hoy', function () {
     
     return view('cholqij.hoy');
 
-});
+})->name('hoy');
 
-Route::get('/home', function () {
+Route::get('/', function () {
     
     return view('home');
 })->name('home');
