@@ -2637,6 +2637,7 @@ textarea.form-control.is-invalid {
   width: 150px;
   font-weight: 400;
   color: #212529;
+  margin: 5px;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -7083,7 +7084,16 @@ button.bg-light:focus {
 
 .bg-dark {
   background-color: #343a40 !important;
+   
 }
+
+.bg-darky {
+
+  background-image: url(https://www.deguate.com/artman/uploads/39/intro-3.jpg)!important;
+  background-size: cover;
+}
+
+
 
 a.bg-dark:hover,
 a.bg-dark:focus,
@@ -7096,6 +7106,11 @@ button.bg-dark:focus {
   background-color: #fff !important;
 }
 
+.background-trasparent{
+  background-color: rgba(3, 3, 3, 0.493)!important; 
+  background-blend-mode: darken !important;
+
+}
 .bg-transparent {
   background-color: transparent !important;
 }
@@ -8696,7 +8711,7 @@ button.bg-dark:focus {
 
 .pt-5,
 .py-5 {
-  padding-top: 3rem !important;
+  padding-top: 1rem !important;
 }
 
 .pr-5,
@@ -8706,7 +8721,7 @@ button.bg-dark:focus {
 
 .pb-5,
 .py-5 {
-  padding-bottom: 3rem !important;
+  padding-bottom: 1rem !important;
 }
 
 .pl-5,
@@ -10821,7 +10836,8 @@ a.text-dark:focus {
 }
 
 .text-white-50 {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  
 }
 
 .text-hide {

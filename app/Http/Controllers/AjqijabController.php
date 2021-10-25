@@ -12,6 +12,7 @@ use App\User;
 use App\models\Agenda;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Carbon;
 
 class AjqijabController extends Controller
 {
@@ -137,7 +138,7 @@ ORDER BY COUNT(*) DESC");
   public function evento(Request $request)
   {
 
-    // $puta = "me cago en la puta";
+  
     $input = $request->all();
     $id = $input["id"];
 
@@ -170,11 +171,13 @@ ORDER BY COUNT(*) DESC");
 
   public function verperfil2($id)
   {
+    date_default_timezone_set('America/Guatemala');
+    $fee =  Carbon::now()->format('Y-m-d');
 
 
 
-
-    $eventos = DB::select("select agendas.id, agendas.fecha, agendas.titulo, agendas.hora_inicio, agendas.hora_final, agendas.titulo, agendas.estado from agendas inner join users on agendas.id_usuario = users.id where id_usuario = $id and tipo = 2 ");
+// Aquí es donde muestro los eventos disponibles de cada sacerdote
+    $eventos = DB::select("select agendas.id, agendas.fecha, agendas.titulo, agendas.hora_inicio, agendas.hora_final, agendas.titulo, agendas.estado from agendas inner join users on agendas.id_usuario = users.id where id_usuario = $id and tipo = 2 and agendas.fecha >= '$fee'");
     $eve = [];
 
     foreach ($eventos as $evento) {
@@ -197,6 +200,10 @@ ORDER BY COUNT(*) DESC");
         ];
       }
     }
+
+
+  
+
     return response()->json($eve);
   }
 

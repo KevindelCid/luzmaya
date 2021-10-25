@@ -3,16 +3,18 @@
 @section('content')
 
 
-    <header class="bg-dark py-5">
-        <div class="container px-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-6">
-                    <div class="text-center my-5">
-                        <h1 class="display-5 fw-bolder text-white mb-2">LuzMaya ¡Su guía espiritual!</h1>
-                        <p class="lead text-white-50 mb-4">¡Conozca aprenda y ponga en práctica los sistemas ancestrales mayas!</p>
+    <header class="bg-darky py-5">
+        <div class="container  px-5">
+           
+            <div class="row gx-5   justify-content-center">
+                <div class="col-lg-6 background-trasparent">
+                    <div class="  text-center my-5">
+                        <h1 class="display-5   fw-bolder text-white mb-2">LuzMaya ¡Su guía espiritual!</h1>
+                        <p class="lead text-white-50 mb-4">¡Conozca, aprenda y ponga en práctica los sistemas ancestrales mayas!</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{{ route('cholqij.hoy') }}">Calendario Lunar</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="{{ route('perfil.index') }}">Organice su agenda</a>
+                            <a class="btn btn-primary btn-lg  me-sm-3" href="{{ route('cholqij.hoy') }}">Calendario Lunar (Hoy)</a>
+                            <a class="btn btn-outline-light btn-lg " href="{{ route('perfil.index') }}">Organice su agenda</a>
+                            <a class="btn btn-success btn-lg  me-sm-3" href="{{ route('ajqijab.index') }}">Contacte un Sacerdote Maya</a>
                         </div>
                     </div>
                 </div>
@@ -23,32 +25,38 @@
     <section class="py-5 border-bottom" id="features">
         <div class="container px-5 my-5">
             <div class="row gx-5">
+                <div class="col-lg-10 mb-5 mb-lg-0">
+                <a href="">- Ajq'ij y Msc. Audelino Sac Coyoy</a>
+                </div>
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                    <h2 class="h4 fw-bolder">Featured title</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                    <a class="text-decoration-none" href="#!">
-                        Call to action
+                    <h2 class="h4 fw-bolder">¿Qué es Ajq'ijab?</h2>
+                    <p>"Quien conoce y ejercita cotidianamente el Cholq´ij o calendario
+                        sagrado maya, es la o el AJQ´IJ. En idioma k´iche´, la etimología de este término es: AJ prefijo de un oficio. Q´IJ el sol-día. Puede traducirse como ¨ el contador de los días ¨. el
+                        plural de Ajq´ij es: AJQ´IJAB´ conocidos como sacerdotes mayas o guías espirituales."
+                        </p>
+                    {{-- <a class="text-decoration-none" href="#!">
+                        Leer Biografía...
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> --}}
                 </div>
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                    <h2 class="h4 fw-bolder">Featured title</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                    <a class="text-decoration-none" href="#!">
-                        Call to action
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
+                    <h2 class="h4 fw-bolder">Calendario Sagrado (Cholq'ij)</h2>
+                    <p>"El Cholq´ij o calendario sagrado maya tiene 260 días, es uno de los instrumentos que los
+                        abuelos del Pueblo maya crearon; tiene dos aplicaciones principales, la primera: ubica
+                        momentos para actividades colectivas; la segunda: tiene una aplicación individual para
+                        identificar la conducta natural o la forma de ser de las personas por medio de su nawal, es
+                        decir, los rasgos psicológicos básicos, positivos y negativos."  </p>
+                   
                 </div>
                 <div class="col-lg-4">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                    <h2 class="h4 fw-bolder">Featured title</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                    <a class="text-decoration-none" href="#!">
-                        Call to action
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
+                    <h2 class="h4 fw-bolder">¿Qué es un Nawal?</h2>
+                    <p>Nawal es la energía, espíritu o fuerza de los seres y elementos de la naturaleza, los nawales
+                        son representados por elementos mismos de la naturaleza como el sol, la luna, la lluvia, el
+                        aire, el agua, las plantas y animales porque en el pensamiento maya todo tiene vida. " </p>
+                   
                 </div>
             </div>
         </div>
@@ -315,7 +323,7 @@
     </section>
     <!-- Footer-->
     <footer class="py-5 bg-dark">
-        <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; LuzMaya.com 2021</p></div>
     </footer>
     <!-- Bootstrap core JS-->
   

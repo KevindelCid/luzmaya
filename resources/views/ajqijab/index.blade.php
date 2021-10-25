@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-@if(auth()->user()->tipo == 1)
+
+@if(isset(auth()->user()->tipo) && auth()->user()->tipo !=2)
 <a href="{{ route('soli') }}">¿Usted es un Ajq'ij?
 </a>
 @endif

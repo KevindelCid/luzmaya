@@ -108,28 +108,28 @@ if(isset($input["precio"])){
 
 public function mostrar(){
 
-   $agenda = Agenda::all();
-   $n_agenda =[];
+   // $agenda = Agenda::all();
+   // $n_agenda =[];
 
-   foreach($agenda as $valor){
+   // foreach($agenda as $valor){
 
-      $n_agenda[] = [
+   //    $n_agenda[] = [
 
-         "id"=>$valor->id,
-         "start"=>$valor->fecha . " " . $valor->hora_inicio,
-         "end"=>$valor->fecha . " ". $valor->hora_final,
-         "title"=>$valor->titulo,
-         "backgroundColor"=>$valor->estado == 1 ? "#7ACF2A" : "#CF2A2A",
-         "textColor"=>"#fff",
-         "extendedProps"=>[
-            "id_usuario"=>$valor->id_usuario,
-            "precio"=>$valor->precio,
+   //       "id"=>$valor->id,
+   //       "start"=>$valor->fecha . " " . $valor->hora_inicio,
+   //       "end"=>$valor->fecha . " ". $valor->hora_final,
+   //       "title"=>$valor->titulo,
+   //       "backgroundColor"=>$valor->estado == 1 ? "#7ACF2A" : "#CF2A2A",
+   //       "textColor"=>"#fff",
+   //       "extendedProps"=>[
+   //          "id_usuario"=>$valor->id_usuario,
+   //          "precio"=>$valor->precio,
             
-         ]
+   //       ]
 
-      ]; 
-//   return response()->json($n_agenda);
-   }
+   //    ]; 
+
+ //  }
  
 }
 

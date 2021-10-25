@@ -140,13 +140,18 @@ var baseURL = {!! json_encode(url('/')) !!}
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     
                                     <a class="dropdown-item" href="{{ route('perfil.index') }}">
-                                     {{ __('Perfil') }}
+                                     {{ __('Agenda') }}
                                  </a>
                                 
                                     
                                     <a class="dropdown-item" href="{{ route('inicio') }}">
                                      {{ __('Eventos proximos') }}
                                  </a>
+
+                                 <a class="dropdown-item" href="{{ route('perfil.index') }}">
+                                    {{ __('Solicitudes de evento') }}
+                                </a>
+
 
                                     <a class="dropdown-item" href="{{ route('inicio') }}"
                                        onclick="event.preventDefault();

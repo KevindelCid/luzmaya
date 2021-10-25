@@ -78,7 +78,23 @@ este ajqij fue creado la fecha: {{ $gg->created_at }}
           </button>
       </div>
       <div class="modal-body">
-        aqui vamos a mostra el formulario de solicitud de cita
+       
+        <div class="col-md-12">
+          <div class="box">
+<div class="mb-5">
+  <div class="row">
+    <div class="col-md-4 form-group">
+
+
+    {{-- por el momento esta función no está disponible... --}}
+
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

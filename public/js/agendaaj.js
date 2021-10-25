@@ -64,13 +64,13 @@ var id;
 
             left: 'prev,next today',
             center: 'title',
-            right: 'dayGridMonth,timeGridWeek,listWeek'
+            right: ''
     
         },
      
 
         navLinks: true, // can click day/week names to navigate views
-        selectable: true,
+        selectable: false,
         selectMirror: true,
 //         select: function(arg) {
         
@@ -93,7 +93,7 @@ var id;
 select: function(arg) {
 
 
-$("#solicitarcitamodal").modal();
+//$("#solicitarcitamodal").modal();
 
 },
 
@@ -139,9 +139,17 @@ titulon = info.event.title;
             
                     var resultado = JSON.parse(JSON.stringify(response));
                 
-               
+               if(resultado["precio"] == null){
+                  var re = "Gratis";
+               }else{
+                var re = "$"+resultado["precio"]+" USD";
+               }
+                   
+                    
+
+
                     $("#descriE").text(resultado["datoid"]);
-                    $("#precioE").text("$"+resultado["precio"]);
+                    $("#precioE").text(re);
                     $("#precio").val(resultado["precio"]);
                     $("#descripcioned").val(resultado["datoid"]);
                     $("#ide").val(resultado["id"]);

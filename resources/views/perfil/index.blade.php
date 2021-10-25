@@ -111,12 +111,11 @@
 
 
     <div class="col-md-8 form-group">
-        <h1>Tu agenda </h1>
+        <h1>Su agenda </h1>
         @if(auth()->user()->tipo == 2 )
 
         <h3>Agenda ajq'ij</h3>
-        <b>Cuando agregue un evento en su agenda pongalo 
-          como publico para que las personas puedan verlo en su perfil y contratar sus servicios</b>
+        <b>Todos los eventos que ingrese serán publicos y las personas podrán verlos, comprarlos o reclamarlos</b>
 
        @endif
 
