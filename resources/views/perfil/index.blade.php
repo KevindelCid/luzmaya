@@ -171,7 +171,7 @@
                         <div class="form-group">
 
                             <label for="">Precio</label>
-                            $<input type="number" value="3433" oninput="precio();" class="form-control" name="precioE"
+                            $<input type="number"  class="form-control" name="precioE"
                                 id="precioE">
 
                         </div>
@@ -408,7 +408,7 @@
                                     <div class="form-group">
 
                                         <label for="tiempo">Duracion (minutos)</label>
-                                        <input type="number" class="form-control" name="tiempo" id="tiempo">
+                                        <input type="number" value="30" class="form-control" name="tiempo" id="tiempo">
 
                                     </div>
 

@@ -581,16 +581,26 @@ console.log(hora_inicio, hora_finalizacion, m);
                     
                  
             
+                  
                     var resultado = JSON.parse(JSON.stringify(response));
-
                     console.log(resultado);
                
                     $("#descriE").text(resultado["datoid"]);
                    
-                    $("#precioE").val(resultado["precio"]);
+let precio ;
+                    if(resultado["precio"] == null){
+                         precio ="Gratis!"; 
+                         $("#precioEd").text(precio);
+                
+                }else{ 
+                    precio = resultado["precio"];  
+                    $("#precioEd").text("$"+precio+" USD");
+                
+                }
+               
 
                     $("#descriEd").text(resultado["datoid"]);
-                    $("#precioEd").text("$"+resultado["precio"]);
+                    $("#precioE").val("$"+resultado["precio"]);
 
                     $("#descripcioned").val(resultado["datoid"]);
             

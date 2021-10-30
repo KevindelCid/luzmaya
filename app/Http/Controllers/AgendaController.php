@@ -95,18 +95,22 @@ public function guardar(Request $request){
     
     $input = $request->all();
 
-
+$titulo = "sin título";
     
 
     if($this->validacion($input["fecha"], $input["inicio"], $input["horafinal"])){
 
 
 if(isset($input["precio"])){
+   if($input['titulo'] != null){
+
+$titulo = $input['titulo'];
+   }
 
                $agenda = Agenda::create([
       
                   "id_usuario"=> auth()->user()->id,
-                  "titulo"=>$input["titulo"],
+                  "titulo"=>$titulo,
                   "fecha"=>$input["fecha"],
                   "hora_inicio"=>$input["inicio"],
                   "hora_final"=>$input["horafinal"],
@@ -121,7 +125,7 @@ if(isset($input["precio"])){
                $agenda = Agenda::create([
       
                   "id_usuario"=> auth()->user()->id,
-                  "titulo"=>$input["titulo"],
+                  "titulo"=>$titulo,
                   "fecha"=>$input["fecha"],
                   "hora_inicio"=>$input["inicio"],
                   "hora_final"=>$input["horafinal"],

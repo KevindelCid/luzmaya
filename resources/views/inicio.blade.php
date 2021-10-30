@@ -82,8 +82,9 @@
         
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-warning">Editar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        
+          {{-- <button type="button" class="btn btn-warning">Editar</button> --}}
         </div>
       </div>
     </div>
