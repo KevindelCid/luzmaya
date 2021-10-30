@@ -467,7 +467,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgnAEI" src="" width="950" alt="">
+                <img class="res" id="mimgnAEI" src="" width="950" alt="">
 
 
 
@@ -492,7 +492,7 @@
             <div class="modal-body">
                 
 
-                <img class="" id="mimgnE" src="" width="950" alt="">
+                <img class="res" id="mimgnE" src="" width="950" alt="">
 
 
 
@@ -516,7 +516,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgnAED" src="" width="950" alt="">
+                <img class="res" id="mimgnAED" src="" width="950" alt="">
 
 
 
@@ -541,7 +541,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgnAI" src="" width="950" alt="">
+                <img class="res" id="mimgnAI" src="" width="950" alt="">
 
 
 
@@ -566,7 +566,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgn" src="" width="950" alt="">
+                <img class="res" id="mimgn" src="" width="950" alt="">
 
 
 
@@ -591,7 +591,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgnAD" src="" width="950" alt="">
+                <img class="res" id="mimgnAD" src="" width="950" alt="">
 
 
 
@@ -616,7 +616,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgnADI" src="" width="950" alt="">
+                <img class="res" id="mimgnADI" src="" width="950" alt="">
 
 
 
@@ -641,7 +641,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgnD" src="" width="950" alt="">
+                <img class="res" id="mimgnD" src="" width="950" alt="">
 
 
 
@@ -667,7 +667,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgnADD" src="" width="950" alt="">
+                <img class="res" id="mimgnADD" src="" width="950" alt="">
 
 
 
@@ -694,7 +694,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgncargador" src="" width="950" alt="">
+                <img class="res" id="mimgncargador" src="" width="950" alt="">
 
 
 
@@ -708,7 +708,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade dark" id="mimgSolar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+{{-- <div class="modal fade dark" id="mimgSolar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -720,7 +720,7 @@
             <div class="modal-body">
                 <p id="nawalAEI"></p>
 
-                <img class="" id="mimgSolarm" src="" width="950" alt="">
+                <img class="res" id="mimgSolarm" src="" width="950" alt="">
 
 
 
@@ -729,7 +729,7 @@
           
         </div>
     </div>
-</div>
+</div> --}}
 
 
 

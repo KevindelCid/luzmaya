@@ -33,7 +33,10 @@ body {
 }
 
 .portada.oculta {
-	transform: translateY(100%);
+	display: none;
+}
+.oculta {
+	display: none;
 }
 
 .portada .header {

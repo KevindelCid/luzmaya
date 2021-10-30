@@ -12,14 +12,14 @@
 </div>
 
 @else
-<section>
-<div class="portada" id="portada"> 
+
+<div  class="portada" id="portada"> 
         {{-- <div class="header">
         <h1 class="logotipo">{{$titu}}</h1>
        
         <p class="mensaje">{{$descri}}</p> --}}
-        
-<div class="col-md-12">
+        <div class="ou" id="ou">
+<div  class="col-md-12">
     <div class="box">
 {{-- <form action="" class="mb-5" method="" enctype="multipart/form-data"> --}}
 <div class="row mb-5" >
@@ -38,7 +38,7 @@
                        
 
     <div class="form-group">
- <div id="cuenta"></div>
+ <div  id="cuenta" class="cuenta"></div>
     </div></div>
 </div>
 </div>
@@ -49,6 +49,7 @@
         <a href="https://www.twitter.com/falconamsters" class="btn-red-social"><i class="fab fa-instagram"></i></a>
     </div> --}}
 </div>
+        </div>
 <main class="contenedor">
 @if($estado == 1)
 <input type="hidden" id="enlace" value="@if(isset($enlace)) {{$enlace}} @endif">
@@ -103,6 +104,7 @@ window.onload = meetjit;
     
 
 </div>
+
 
 @endif
 

@@ -40,6 +40,56 @@ return view("perfil.index");
 
 
 
+
+
+
+
+
+
+
+
+public function editar(Request $request){
+    
+    
+   $input = $request->all();
+
+
+   $evento = Agenda::findOrFail($input['idE']);
+
+ 
+   $evento->titulo = $input['tituloE'];
+
+   $evento->fecha = $input['fechaE'];
+   $evento->hora_inicio = $input['inicio'];
+   $evento->hora_final = $input['horafinal'];
+   $evento->descripcion = $input['descriE'];
+if(auth()->user()->tipo == 2){
+   $evento->precio = $input['precioE'];
+}
+
+  
+   if($evento->save()){
+
+      return response()->json(["ok"=>true]);
+
+   }
+   else{
+    
+           return response()->json(["ok"=>false]);
+     
+        }
+
+    
+}
+
+
+
+
+
+
+
+
+
 public function guardar(Request $request){
     
     
@@ -141,6 +191,7 @@ public function eventito(Request $request){
    $id = $input["id"];
    
    $datos = Agenda::find($id);
+ 
    $descripcion = $datos->descripcion;
    $precio = $datos->precio;
 // $input = $request->all();

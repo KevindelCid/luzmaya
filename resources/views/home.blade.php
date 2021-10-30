@@ -26,7 +26,8 @@
         <div class="container px-5 my-5">
             <div class="row gx-5">
                 <div class="col-lg-10 mb-5 mb-lg-0">
-                <a href="">- Ajq'ij y Msc. Audelino Sac Coyoy</a>
+                <a target="_blank" href="http://www.url.edu.gt/PortalURL/Archivos/83/Archivos/Departamento%20de%20Investigaciones%20y%20publicaciones/Proyectos%20de%20Investigacion/El%20Calendario%20Sagrado%20Maya%20metodo%20para%20el%20computo%20de%20tiempo.pdf">- Ajq'ij y Msc. Audelino Sac Coyoy - El Calendario Sagrado Maya,
+                    Método para el Cómputo del Tiempo</a>
                 </div>
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
@@ -62,7 +63,7 @@
         </div>
     </section>
     <!-- Pricing section-->
-    <section class="bg-light py-5 border-bottom">
+    {{-- <section class="bg-light py-5 border-bottom">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
                 <h2 class="fw-bolder">Pay as you grow</h2>
@@ -320,7 +321,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; LuzMaya.com 2021</p></div>

@@ -8,6 +8,15 @@ body{
 
 }
 
+.res{
+
+  width: 100% !important;
+
+
+}
+
+
+
 .cards-list {
   display: none;
     z-index: 0;

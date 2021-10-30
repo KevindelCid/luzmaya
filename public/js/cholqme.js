@@ -487,7 +487,7 @@ function detNawal(diasC) {
     let naw = Math.floor(diasC / 20);
     let naww = diasC - naw * 20;
     // prueba de que valor es numero y cual no lo es:
-    alert(parseInt(diasC) - 1);
+    // alert(parseInt(diasC) - 1);
 
 
 

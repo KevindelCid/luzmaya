@@ -148,9 +148,9 @@ var baseURL = {!! json_encode(url('/')) !!}
                                      {{ __('Eventos proximos') }}
                                  </a>
 
-                                 <a class="dropdown-item" href="{{ route('perfil.index') }}">
+                                 {{-- <a class="dropdown-item" href="{{ route('perfil.index') }}">
                                     {{ __('Solicitudes de evento') }}
-                                </a>
+                                </a> --}}
 
 
                                     <a class="dropdown-item" href="{{ route('inicio') }}"

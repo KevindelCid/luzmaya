@@ -535,9 +535,34 @@ console.log(hora_inicio, hora_finalizacion, m);
             let hora_inicioE = moment(info.event.start).format("hh:mm A");
             let fecha_inicioE = moment(info.event.start).format("dddd DD [de] MMMM [de] YYYY");
 
-            $("#tituloE").text(info.event.title.toUpperCase());
+            let m = moment(info.event.start).format("YYYY-MM-DD");
+            let h = moment(info.event.start).format("hh:mm:ss");
+            let inicio = info.event.start;
+            let fin = info.event.end;
+
+
+
+            var difference = fin.getTime() - inicio.getTime(); // This will give difference in milliseconds
+          let tiempo = Math.round(difference / 60000);
+
+
+            $("#tituloE").val(info.event.title.toUpperCase());
             $("#descriE").text(info.event.descripcion);
-            $("#HoraE").text("La cita quedó agendada para la fecha: "+fecha_inicioE+" a las "+hora_inicioE);
+            $("#idE").val(info.event.id);
+
+
+
+
+            $("#fechaE").val(m);
+            $("#horaE").val(h);
+          
+            $("#tiempoE").val(tiempo);
+
+            $("#tituloEd").text(info.event.title.toUpperCase());
+            $("#descriEd").text(info.event.descripcion);
+            $("#HoraEd").text("La cita quedó agendada para la fecha: "+fecha_inicioE+" a las "+hora_inicioE);
+
+
             $("#click_evento").modal(); // show para ver el modal && modal('hide') para esconder la vista.
 
 
@@ -557,10 +582,16 @@ console.log(hora_inicio, hora_finalizacion, m);
                  
             
                     var resultado = JSON.parse(JSON.stringify(response));
-                    console.log(resultado["precio"]);
+
+                    console.log(resultado);
                
                     $("#descriE").text(resultado["datoid"]);
-                    $("#precioE").text("$"+resultado["precio"]);
+                   
+                    $("#precioE").val(resultado["precio"]);
+
+                    $("#descriEd").text(resultado["datoid"]);
+                    $("#precioEd").text("$"+resultado["precio"]);
+
                     $("#descripcioned").val(resultado["datoid"]);
             
             
@@ -619,13 +650,61 @@ console.log(hora_inicio, hora_finalizacion, m);
     function limpiar(){
 
         $('#evento').modal('hide');
+        $('#editmodal').modal('hide');
         $("#fecha").val("");
         $("#inicio").val("");
+        $("#titulo").val("");
         $("#tiempo").val("");
         $("#precio").val("");
         $("#descripcion").val("");
 
     }
+
+
+function editar(){
+
+
+
+    
+            // agrego la data del form a formData
+            var fd = new FormData(document.getElementById("datosformeditar"));
+            
+
+        let fecha = $("#fechaE").val();
+        let hora = $("#inicioE").val();
+        let tiempo = $("#tiempoE").val();
+        let hora_inicial = moment(hora).format('HH:mm:ss');
+        let hora_final = moment(hora).add(tiempo,'m').format('HH:mm:ss');
+
+        fd.set("inicio", hora_inicial);
+        fd.set("horafinal", hora_final);
+
+
+      
+          
+            $.ajax({
+                type:'POST',
+                url: baseURL+'/perfil/editar',
+                data:fd,
+                cache:false,
+                contentType: false,
+                processData: false,
+             
+            }).done(function(respuesta){
+
+                if(respuesta && respuesta.ok){
+                    calendar.refetchEvents();
+                    alert("El evento ha sido modificado correctamente");
+                    limpiar();
+                }else{
+
+                    alert("Se ha producido un error de conexión");
+                }
+
+            });
+
+}
+
 
 
     function guardar(){
@@ -663,7 +742,7 @@ console.log(hora_inicio, hora_finalizacion, m);
                     limpiar();
                 }else{
 
-                    alert(" ");
+                    alert("Se ha producido un error de conexión");
                 }
 
             });

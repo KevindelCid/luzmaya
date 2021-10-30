@@ -87,7 +87,7 @@
 								
 		            </div>
 		          </form>
-		          <p class="text-center">o puedes <a data-toggle="tab" onclick="selectedRegister();" href="#signup">Crear una nueva cuenta</a></p>
+		         
 		        </div>
 
 
@@ -103,10 +103,10 @@
 
 
                 </div>
-                <br>
-                <div class="col-md-9 col-lg-6">
+               
+                <div class="col-md-9 col-lg-5">
                     <div class="wrap x">
-                    <div class="login-wrap p-6 p-md-5">
+                    <div class="login-wrap p-4 p-md-5">
                         <div class="d-flex">
                             <div class="w-100">
                                 <h3 class="mb-4">Cree una nueva cuenta</h3>
@@ -122,7 +122,7 @@
                         
                         
                             
-                            <div class="form-group mt-3">
+                            <div class="form-group mt-4">
                                 
                                 <input  id="name" type="text" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
                                 <label class="form-control-placeholder" for="username">Nombre</label>

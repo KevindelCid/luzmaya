@@ -97,7 +97,7 @@ function calcularDiaAnioSolar(dias){
     document.getElementById("imgsolar").src = baseURL + "/storage/naw/" + glifoSolar + ".png";
     let imgSolar = document.querySelector("#imgsolar")
     imgSolar.removeAttribute("hidden");
-    document.getElementById("mimgSolarm").src = baseURL + "/storage/" + glifoSolar + ".jpg";
+    // document.getElementById("mimgSolarm").src = baseURL + "/storage/" + glifoSolar + ".jpg";
 
 
 

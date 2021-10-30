@@ -30,19 +30,25 @@ simplyCountdown('#cuenta', {
 	onEnd: function() {
 		// document.getElementById("tex").removeAttribute("hidden");
 		// document.getElementById("meet").removeAttribute("hidden");
+		// let dd = document.querySelector("#cuenta");
+		// dd.addAttribute("hidden");
 		if(estado == 1){
 
 			let d = document.querySelector("#tex");
 		d.removeAttribute("hidden");
-		let ds = document.querySelector(".containers")
+		
+		let ds = document.querySelector(".containers") ;
 		ds.removeAttribute("hidden");
+		
 
 		}else{
+		// 	let dd = document.querySelector("#cuenta");
+		// dd.removeAttribute("hidden");
 			let d = document.querySelector("#tex");
 			d.removeAttribute("hidden");
 		}
 		
-		document.getElementById('portada').classList.add('oculta');
+		document.getElementById('ou').classList.add('oculta');
 
 		return; 
 	}, //Callback on countdown end, put your own function here

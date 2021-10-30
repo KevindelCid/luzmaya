@@ -184,6 +184,8 @@ Route::get('/perfil', 'AgendaController@index')->name('perfil.index');
 
 Route::post('/perfil/guardar', 'AgendaController@guardar');
 
+Route::post('/perfil/editar', 'AgendaController@editar');
+
 Route::post('/pagar/active', 'AgendaController@active');
 
 Route::get('/perfil/listar', 'AgendaController@listar');
