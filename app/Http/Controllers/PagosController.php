@@ -107,6 +107,12 @@ function token(Request $request){
     $clientId = "AYSaPOpSAY0hkzp0GinLbXfkEegCbZSWj_649wZHJ17LEXVRUWC9n1Sq5J6xPAtW4ngRHejZS_zGLPhj";
     $Secret = "EAWEggvsy0yaEyeUYOOB5yh3zVyQR7LE7dlH6Tixy4C_vlj8AkWIiwpr7sTkd8iW58t7aWnocR9cRgxL";
 
+
+//production
+// $clientId = "Ad-gpEmn2auvNk9Yh22pimfQgUc8Vc1G-TKjNLPXvsf6plz6joBWNb529_9uMwRIMUA87h7Xe5-lP5Ye";
+// $Secret = "ENH4nC7l7IPxBoLhc54i2qFCQY8rVVEh3cKRw7QSTI9STtXtRqcYMcoTAKI2BwWHsRXSkH1IbU1aZ2I2";
+
+
     $login =  curl_init("https://api-m.sandbox.paypal.com/v1/oauth2/token");
     curl_setopt($login, CURLOPT_RETURNTRANSFER,TRUE);
     curl_setopt($login, CURLOPT_USERPWD,$clientId.":".$Secret);
