@@ -74,8 +74,12 @@ let estado = {{ $datosEvento->estado }}
 
 @else
 <h4>${{$precio}}</h4> 
-<input type="submit" value="Reservar cita gratuita" class="btn btn-success">
+<input type="submit" onclick="reservar({{ $id_evento }});" value="Reservar gratis" class="btn btn-success">
 @endif
+
+
+
+
 </p><p>Al concretar el pago la cita quedará reservada unicamente para ti<br>
 
 <strong>Visita la agenda de eventos pendientes en tu perfil</strong>
@@ -97,4 +101,5 @@ let estado = {{ $datosEvento->estado }}
 
 </div>
 <script src="{{ asset('js/paypal.js') }}" defer></script>
+<script src="{{ asset('js/payfree.js') }}" defer></script>
 @endsection('layouts.app')

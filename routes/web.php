@@ -175,6 +175,8 @@ Route::post('/admin/confirmation/{id}', 'AdminController@confirmation');
 
 Route::post('/admin/confirmationAll/{id}', 'AdminController@confirmationAll');
 
+Route::post('/confirmar/cfree', 'PagosController@confirmationfree');
+
 
 
 Route::post('/pagar/eventito', 'AgendaController@active');

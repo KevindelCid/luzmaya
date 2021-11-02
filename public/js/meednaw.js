@@ -166,9 +166,9 @@ function naw() {
     const tiempoTranscurrido = Date.now();
     const hoy = new Date(tiempoTranscurrido);
     diaCholqijM(restaFechaHoyM(hoy.toLocaleDateString('en-US', { timeZone: 'America/Guatemala' })));
+    
 
-
-
+ 
 }
 function diaCholqijM(dias) {
 
@@ -192,7 +192,7 @@ function detNawalM(diasC) {
 
 function restaFechaHoyM(f2) {
 
-
+   
 
     var aFecha1 = "07/01/1001".split('/');
     var aFecha2 = f2.split('/');
@@ -243,6 +243,7 @@ function sumarDiasM(d){
 
 
  
+    
 
 
 
@@ -306,7 +307,7 @@ fechacontresdiasmasformatada= new Date(fechacontresdiasmas);
 
     diaCholqij(restaFechaHoy(fechacontresdiasmasformatada.toLocaleDateString('en-US', { timeZone: 'America/Guatemala' })));
 
-
+//  let f = moment(fechacontresdiasmasformatada.toLocaleDateString('en-US', { timeZone: 'America/Guatemala' })).format("YYYY-MMMM-dddd"); alert(fechacontresdiasmasformatada.toLocaleDateString('en-US', { timeZone: 'America/Guatemala' }));
     moment.locale('es', {
         months: 'Enero_Febrero_Marzo_Abril_Mayo_Junio_Julio_Agosto_Septiembre_Octubre_Noviembre_Diciembre'.split('_'),
         monthsShort: 'Enero._Feb._Mar_Abr._May_Jun_Jul._Ago_Sept._Oct._Nov._Dec.'.split('_'),
@@ -319,8 +320,11 @@ fechacontresdiasmasformatada= new Date(fechacontresdiasmas);
 
     
      let woy =  moment(fechacontresdiasmasformatada).format("dddd DD [de] MMMM [de] YYYY");
+  
+  calcularAniosSolares(restarSolar(moment(fechacontresdiasmasformatada).format("DD/MM/YYYY")));
 
 
+  
 
     let nAEI = document.querySelector("#nawalAEI")
     nAEI.innerHTML = lunas[0] + " " + lunas[1];

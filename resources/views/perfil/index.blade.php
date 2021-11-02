@@ -198,7 +198,7 @@
                     <div class="form-group">
 
                         <label for="">Fecha</label>
-                        <input type="date" class="form-control" name="fechaE" id="fechaE">
+                        <input type="date" required class="form-control" name="fechaE" id="fechaE">
 
                     </div>
 
@@ -219,7 +219,7 @@
                     <div class="form-group">
 
                         <label for="tiempo">Duracion (minutos)</label>
-                        <input type="number" class="form-control" name="tiempoE" id="tiempoE">
+                        <input type="number" required class="form-control" name="tiempoE" id="tiempoE">
                         <input hidden type="number" class="form-control" name="idE" id="idE">
 
                     </div>
@@ -387,7 +387,7 @@
                                     <div class="form-group">
 
                                         <label for="">Fecha</label>
-                                        <input type="date" class="form-control" name="fecha" id="fecha">
+                                        <input type="date" required	 class="form-control" name="fecha" id="fecha">
 
                                     </div>
 
@@ -398,7 +398,7 @@
                                     <div class="form-group">
 
                                         <label for="inicio">Hora de inicio</label>
-                                        <input type="time" class="form-control" name="inicio" id="inicio">
+                                        <input type="time" required class="form-control" name="inicio" id="inicio">
 
                                     </div>
 

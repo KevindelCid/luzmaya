@@ -17,6 +17,81 @@ class PagosController extends Controller
 {
   
 
+
+
+    function confirmationfree(Request $request){
+
+
+
+        $input = $request->all();
+       
+        $idevento = $input["id"];
+      
+    
+    
+        $venta = Ventas::create([
+          
+            "id_usuario"=> auth()->user()->id,
+            "id_evento"=>$idevento,
+            "precio"=>0,
+            "estado"=>"completado",
+            "cliente"=>0,
+           
+         ]);
+    
+    
+    
+    
+         $updateven=Agenda::findOrfail($idevento);
+        
+         $updateven->estado = 3;
+         $updateven->cliente = auth()->user()->id;
+         
+         $updateven->save();
+         
+         $evento = DB::table('agendas')->where('id',  $idevento )->get();
+         
+         foreach($evento as $event){
+         
+            
+         $link = openssl_encrypt(auth()->user()->id."XfWS+".$event->id_usuario."XfWS+".$event->fecha,COD,KEY);
+         
+         }
+         
+         
+         //$trans = array("h" => "-", "hello" => "hi", "hi" => "hello");
+         $link = strtr($link, "/", "t");
+         
+    
+    
+    
+    
+    
+      
+        
+    
+    
+    
+    $updateven2=Agenda::findOrfail($idevento);
+    
+    $updateven2->link = $link;
+    
+    $updateven2->save();
+    
+    $mensaje = "El evento ha sido reservado exitosamente";
+    
+    
+    return array("mensaje"=>$mensaje);
+    
+    
+    
+    
+    
+    
+    }
+
+
+
 function token(Request $request){
 
 
@@ -29,14 +104,8 @@ function token(Request $request){
     $tokenm = $input["paymentToken"];
     $idevento = $input["idevento"];
     $paymentid = $input["paymentID"];
-    //sandbox
     $clientId = "AYSaPOpSAY0hkzp0GinLbXfkEegCbZSWj_649wZHJ17LEXVRUWC9n1Sq5J6xPAtW4ngRHejZS_zGLPhj";
     $Secret = "EAWEggvsy0yaEyeUYOOB5yh3zVyQR7LE7dlH6Tixy4C_vlj8AkWIiwpr7sTkd8iW58t7aWnocR9cRgxL";
-
-//production
-// $clientId = "Ad-gpEmn2auvNk9Yh22pimfQgUc8Vc1G-TKjNLPXvsf6plz6joBWNb529_9uMwRIMUA87h7Xe5-lP5Ye";
-// $Secret = "ENH4nC7l7IPxBoLhc54i2qFCQY8rVVEh3cKRw7QSTI9STtXtRqcYMcoTAKI2BwWHsRXSkH1IbU1aZ2I2";
-
 
     $login =  curl_init("https://api-m.sandbox.paypal.com/v1/oauth2/token");
     curl_setopt($login, CURLOPT_RETURNTRANSFER,TRUE);
@@ -127,14 +196,23 @@ $updateven2=Agenda::findOrfail($idevento);
 
 $updateven2->estado = 3;
 $updateven2->link = $link;
-
-$update2Venta == 1 ? $updateven2->save(): print_r("no se pudo actualizar el estado del evento a confirmado.");
-
-
+$err = false;
+$update2Venta == 1 ? $updateven2->save(): $err = true;
 
 
 $state == "approved" ? $estado = 1 : $estado = 0;
 
+
+if($err == true){
+    
+$updateven2=Agenda::findOrfail($idevento);
+
+$updateven2->estado = 1;
+$updateven2->link = null;
+$updateven2->cliente = null;
+$updateven2->save();
+$estado = 0;
+}
 
     return view("pagar/verificacion")->with('estado',$estado);
 
