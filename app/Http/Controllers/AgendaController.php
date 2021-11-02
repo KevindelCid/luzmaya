@@ -60,7 +60,7 @@ public function editar(Request $request){
    $evento->titulo = $input['tituloE'];
 
    $evento->fecha = $input['fechaE'];
-   $evento->hora_inicio = $input['inicio'];
+   $evento->hora_inicio = $input['horaE'];
    $evento->hora_final = $input['horafinal'];
    $evento->descripcion = $input['descriE'];
 if(auth()->user()->tipo == 2){
@@ -95,16 +95,20 @@ public function guardar(Request $request){
     
     $input = $request->all();
 
-$titulo = "sin título";
+
     
 
     if($this->validacion($input["fecha"], $input["inicio"], $input["horafinal"])){
-
+$titulo = $input['titulo'];
 
 if(isset($input["precio"])){
-   if($input['titulo'] != null){
+   if($input['titulo'] != null ){
 
 $titulo = $input['titulo'];
+   }else{
+
+      $titulo = "Sin título";
+
    }
 
                $agenda = Agenda::create([

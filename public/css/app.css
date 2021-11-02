@@ -7105,6 +7105,12 @@ button.bg-dark:focus {
 .bg-white {
   background-color: #fff !important;
 }
+.c
+{
+  display: flex;
+  justify-content: center;
+
+}
 
 .background-trasparent{
   background-color: rgba(3, 3, 3, 0.493)!important; 

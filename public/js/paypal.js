@@ -15,7 +15,7 @@ paypal.Button.render({
 
     client: {
         sandbox:    'AYSaPOpSAY0hkzp0GinLbXfkEegCbZSWj_649wZHJ17LEXVRUWC9n1Sq5J6xPAtW4ngRHejZS_zGLPhj',
-        production: ''
+        production: 'Ad-gpEmn2auvNk9Yh22pimfQgUc8Vc1G-TKjNLPXvsf6plz6joBWNb529_9uMwRIMUA87h7Xe5-lP5Ye'
     },
 
     // Wait for the PayPal button to be clicked

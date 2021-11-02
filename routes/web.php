@@ -143,7 +143,10 @@ Route::post('/admin/perfil-solicitante/ne', 'AdminController@negation')->name('n
 
 
 Route::get('/admin/perfil-solicitante/rechazar/{id}', 'AdminController@rechazar')->name('rechazar')->middleware('auth');
+Route::get('/admin/negocios', 'AdminController@negocios')->name('negocios')->middleware('auth');
 
+Route::get('/admin/detalles/{id}', 'AdminController@detalles')->name('detalles')->middleware('auth');
+Route::get('/admin/confirmar-pago/{idp}/{ide}', 'AdminController@pago')->name('pago')->middleware('auth');
 
 
 Route::post('nawales/crear','NawalController@create')->name('nawales.crear');
@@ -168,6 +171,12 @@ Route::post('/perfil/config','HomeController@profileUpdate');
 
 Route::post('/perfil/eventito', 'AgendaController@eventito');
 
+Route::post('/admin/confirmation/{id}', 'AdminController@confirmation');
+
+Route::post('/admin/confirmationAll/{id}', 'AdminController@confirmationAll');
+
+
+
 Route::post('/pagar/eventito', 'AgendaController@active');
 
 Route::get('/pagar/verificacion', 'PagosController@token')->middleware('auth','verified');
@@ -185,6 +194,8 @@ Route::get('/perfil', 'AgendaController@index')->name('perfil.index');
 Route::post('/perfil/guardar', 'AgendaController@guardar');
 
 Route::post('/perfil/editar', 'AgendaController@editar');
+
+
 
 Route::post('/pagar/active', 'AgendaController@active');
 

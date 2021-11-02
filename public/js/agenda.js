@@ -536,7 +536,7 @@ console.log(hora_inicio, hora_finalizacion, m);
             let fecha_inicioE = moment(info.event.start).format("dddd DD [de] MMMM [de] YYYY");
 
             let m = moment(info.event.start).format("YYYY-MM-DD");
-            let h = moment(info.event.start).format("hh:mm:ss");
+            let h = moment(info.event.start).format("H:MM");
             let inicio = info.event.start;
             let fin = info.event.end;
 
@@ -600,7 +600,7 @@ let precio ;
                
 
                     $("#descriEd").text(resultado["datoid"]);
-                    $("#precioE").val("$"+resultado["precio"]);
+                    $("#precioE").val(resultado["precio"]);
 
                     $("#descripcioned").val(resultado["datoid"]);
             
@@ -670,6 +670,94 @@ let precio ;
 
     }
 
+    function confirmarTodo(idp){
+
+
+
+
+        $.ajax({
+            type:'POST',
+            url: baseURL+'/admin/confirmationAll/'+idp,
+            data: {id:idp},
+              headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+              
+              success: function(response) {
+        
+                
+             
+        
+              
+                var resultado = JSON.parse(JSON.stringify(response));
+                console.log(resultado);
+           
+    
+                if(resultado["mensaje"] != null){
+                    alert(resultado["mensaje"] );
+                    window.location= baseURL+"/admin/detalles/"+idp;
+            
+            }else{ 
+               
+            alert('Falló!');
+            }
+           
+
+              
+        
+        
+        
+            }
+        });
+
+
+
+    
+            }
+
+
+    function confirmar(ide,idp){
+
+
+
+
+        $.ajax({
+            type:'POST',
+            url: baseURL+'/admin/confirmation/'+ide,
+            data: {id:ide},
+              headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+              
+              success: function(response) {
+        
+                
+             
+        
+              
+                var resultado = JSON.parse(JSON.stringify(response));
+                console.log(resultado);
+           
+    
+                if(resultado["mensaje"] != null){
+                    alert(resultado["mensaje"] );
+                    window.location= baseURL+"/admin/detalles/"+idp;
+            
+            }else{ 
+               
+            alert('Falló!');
+            }
+           
+
+              
+        
+        
+        
+            }
+        });
+
+
+
+    
+            }
+
+    
 
 function editar(){
 
@@ -681,10 +769,13 @@ function editar(){
             
 
         let fecha = $("#fechaE").val();
-        let hora = $("#inicioE").val();
+        let hora = $("#horaE").val();
         let tiempo = $("#tiempoE").val();
-        let hora_inicial = moment(hora).format('HH:mm:ss');
-        let hora_final = moment(hora).add(tiempo,'m').format('HH:mm:ss');
+        // let hora_inicial = moment(hora).format('HH:mm:ss');
+        // let hora_final = moment(hora).add(tiempo,'m').format('HH:mm:ss');
+        let hora_inicial = moment(fecha+" "+hora).format('HH:mm:ss');
+        let hora_final = moment(fecha+" "+hora).add(tiempo,'m').format('HH:mm:ss');
+
 
         fd.set("inicio", hora_inicial);
         fd.set("horafinal", hora_final);

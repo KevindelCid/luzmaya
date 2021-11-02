@@ -27,18 +27,18 @@
     <div class="box">
         <form action="{{ route('cholqij.hoy') }}" class="mb-5" method="get" enctype="multipart/form-data">
         <div class="row">    
-  <h2>Contacta con un Ajq'ij</h2><br>
+  <h2>Contacte con un Ajq'ij</h2><br>
 <div class="col-md-4 form-group">
-  
-    <input type="input" placeholder="Busca a un Ajq'ijab" class="form-control">
+  <small>Los sacerdotes mayas o Ajq'ij aparecen en orden de quien cuenta con más citas futuras disponibles.</small>
+    {{-- <input type="input" placeholder="Busque a un Ajq'ij" class="form-control"> --}}
 </div>
 
-<div class="col-md-2 form-group">
+{{-- <div class="col-md-2 form-group">
                       
     <input type="submit" class="btn btn-danger" value="Buscar">
-</div>
+</div> --}}
         </div>
-        <p>Ingresa al perfil de un Ajq'ij para ver los horarios disponibles o <a href="">Visualiza las reuniones disponibles</a></p>
+        <p>Ingrese al perfil de un Ajq'ij para ver sus horarios disponibles.</p>
 
         </form>
     </div>
@@ -63,20 +63,19 @@
 </div>
 
  @endforeach
- 
+ <div class="contis">{{ $ajqijs->links() }}</div>
 </div>
-<div class="contis">{{ $ajqijs->links() }}</div>
-
 
 
 
 </div>
 
-  
+
     
 <div style="text-align: center;">
 
 </div>
+
 
 
 
@@ -159,5 +158,8 @@
 <a href="{{url('home')}}">Inicio</a>  --}}
 
 </div>
+
+
+
 
 @endsection('layouts.app')

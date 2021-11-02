@@ -70,7 +70,7 @@
                       </span>
                   @enderror
                       
-                      <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                      <span toggle="#password-field" class="toggle-password"></span>
 		            </div>
 		            <div class="form-group">
 		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Ingresar</button>
@@ -179,7 +179,7 @@
                                 <label class="form-control-placeholder" for="password">Contraseña</label>
                        
                         
-                        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        <span toggle="#password-field" class=" toggle-password"></span>
                      
         @error('password')
         <span class="invalid-feedback" role="alert">
@@ -197,9 +197,9 @@
                                 
                                 <input  id="password-confirm" type="password" class="form-control " name="password_confirmation" required autocomplete="new-password">
                                 <label class="form-control-placeholder" for="password"> Repetir Contraseña</label>
-                       
-                        
-                        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                       {{-- con eso aparece el ojo... para implementar despues --}}
+                                {{-- fa fa-fw fa-eye field-icon  --}}
+                        <span toggle="#password-field" class="toggle-password"></span>
      
     
                             
